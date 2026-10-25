@@ -30,7 +30,7 @@ function ContactUs() {
 
 function App() {
   return (
-    <BrowserRouter basename="/rjs-16">
+    <BrowserRouter>
       <nav>
         <Link to="/">Home</Link>{" | "}
         <Link to="/aboutus">About Us</Link>{" | "}
