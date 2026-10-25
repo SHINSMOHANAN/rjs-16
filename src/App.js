@@ -1,29 +1,30 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
 
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Welcome to the Home page.</p>
+    <div className="page-card">
+      <h2>Home</h2>
+      <p>Welcome to the Home Page.</p>
     </div>
   );
 }
 
 function AboutUs() {
   return (
-    <div>
-      <h1>About Us</h1>
-      <p>This is the About Us page.</p>
+    <div className="page-card">
+      <h2>About Us</h2>
+      <p>Welcome to the About Us Page.</p>
     </div>
   );
 }
 
 function ContactUs() {
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <p>This is the Contact Us page.</p>
+    <div className="page-card">
+      <h2>Contact Us</h2>
+      <p>Welcome to the Contact Us Page.</p>
     </div>
   );
 }
@@ -31,17 +32,27 @@ function ContactUs() {
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link>{" | "}
-        <Link to="/aboutus">About Us</Link>{" | "}
-        <Link to="/contactus">Contact Us</Link>
-      </nav>
+      <div className="app">
+        <header className="header">
+          <h1>My React Website</h1>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/contactus" element={<ContactUs />} />
-      </Routes>
+          <nav>
+            <Link to="/">Home</Link>
+            <span>|</span>
+            <Link to="/aboutus">About Us</Link>
+            <span>|</span>
+            <Link to="/contactus">Contact Us</Link>
+          </nav>
+        </header>
+
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/contactus" element={<ContactUs />} />
+          </Routes>
+        </main>
+      </div>
     </BrowserRouter>
   );
 }
